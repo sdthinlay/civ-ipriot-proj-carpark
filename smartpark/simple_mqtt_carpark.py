@@ -3,6 +3,7 @@ from datetime import datetime
 import mqtt_device
 import paho.mqtt.client as paho
 from paho.mqtt.client import MQTTMessage
+import config_parser
 
 
 class CarPark(mqtt_device.MqttDevice):
@@ -67,7 +68,7 @@ class CarPark(mqtt_device.MqttDevice):
 
 
 if __name__ == '__main__':
-    config = {'name': "raf-park",
+    """config = {'name': "raf-park",
               'total-spaces': 130,
               'total-cars': 0,
               'location': 'L306',
@@ -77,7 +78,9 @@ if __name__ == '__main__':
               'topic-qualifier': 'entry',
               'is_stuff': False
               }
+              """
     # TODO: Read config from file
+    config = parse_config('file.txt')
     car_park = CarPark(config)
     print("Carpark initialized")
     print("Carpark initialized")
