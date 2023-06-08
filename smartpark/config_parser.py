@@ -34,11 +34,10 @@ import json
 
 
 
-def parse_config(config_file_path):
+def parse_config():
     """Parse the config file and return the values as a dictionary"""
     # TODO: get the configuration from a parsed file
-    with open(config_file_path, 'r') as file:
+    with open("config.json", 'r') as file:
         config_data = json.load(file)
     return config_data
 
-    # return {'location': 'TBD', 'total_spaces': 0, 'broker_host': 'TBD', 'broker_port': 0}
