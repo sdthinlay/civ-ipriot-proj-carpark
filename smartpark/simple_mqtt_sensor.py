@@ -32,10 +32,15 @@ class Sensor(mqtt_device.MqttDevice):
 
 
 if __name__ == '__main__':
-    config_file = 'config.json'
-    config = config_parser.parse_config(config_file)
+    config1 = {'name': 'sensor',
+               'location': 'moondalop',
+               'topic-root': "lot",
+               'broker': 'localhost',
+               'port': 1883,
+               'topic-qualifier': 'sensor'
+               }
 
-    sensor1 = Sensor(config)
+    sensor1 = Sensor(config1)
     print("Sensor initialized")
     sensor1.start_sensing()
 
